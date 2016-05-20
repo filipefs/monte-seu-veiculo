@@ -13,4 +13,9 @@ public class ModeloBasico implements ICarro {
 		return 40000;
 	}
 
+	@Override
+	public String getNome() {
+		return "Novo Gol";
+	}
+
 }

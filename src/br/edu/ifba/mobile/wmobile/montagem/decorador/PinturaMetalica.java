@@ -17,5 +17,10 @@ public class PinturaMetalica implements ICarro{
 	public double getPreco() {
 		return carro.getPreco() + 1384;
 	}
+
+	@Override
+	public String getNome() {
+		return "Metálica";
+	}
 	
 }

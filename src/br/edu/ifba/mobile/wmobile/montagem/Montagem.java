@@ -42,6 +42,16 @@ public class Montagem {
 		return listaModelos;
 	}
 	 
+	public List<ICarro> getTiposModelos(){
+		List<ICarro> listaModelos = new ArrayList<ICarro>();
+		ICarro gol = new ModeloBasico();
+		listaModelos.add(gol);
+		
+		listaModelos.get(0).getPreco();
+		
+		return listaModelos;
+	}
+	
 	public List<String> getTiposVersoes(){
 		List<String> listaVersoes = new ArrayList<String>();
 		listaVersoes.add("Comfortline");

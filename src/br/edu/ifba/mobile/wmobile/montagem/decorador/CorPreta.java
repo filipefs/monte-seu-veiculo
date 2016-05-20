@@ -17,5 +17,10 @@ public class CorPreta implements ICarro{
 	public double getPreco() {
 		return carro.getPreco();
 	}
+
+	@Override
+	public String getNome() {
+		return "Preta";
+	}
 	
 }

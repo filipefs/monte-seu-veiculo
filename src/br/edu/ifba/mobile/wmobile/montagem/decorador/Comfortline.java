@@ -18,4 +18,10 @@ public class Comfortline implements ICarro{
 		return carro.getPreco() + 8000;
 	}
 
+	@Override
+	public String getNome() {
+		
+		return "Comfortline";
+	}
+
 }

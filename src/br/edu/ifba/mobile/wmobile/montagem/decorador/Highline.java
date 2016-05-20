@@ -17,5 +17,10 @@ public class Highline implements ICarro{
 	public double getPreco() {
 		return carro.getPreco() + 15000;
 	}
+
+	@Override
+	public String getNome() {
+		return "Highline";
+	}
 	
 }

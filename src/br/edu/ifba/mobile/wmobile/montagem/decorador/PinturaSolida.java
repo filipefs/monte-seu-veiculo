@@ -17,5 +17,10 @@ public class PinturaSolida implements ICarro{
 	public double getPreco() {
 		return carro.getPreco();
 	}
+
+	@Override
+	public String getNome() {
+		return "Sólida";
+	}
 	
 }

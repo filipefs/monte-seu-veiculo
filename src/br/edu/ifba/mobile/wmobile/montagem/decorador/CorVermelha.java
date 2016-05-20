@@ -17,5 +17,10 @@ public class CorVermelha implements ICarro{
 	public double getPreco() {
 		return carro.getPreco() + 8000;
 	}
+
+	@Override
+	public String getNome() {
+		return "Vermelha";
+	}
 	
 }

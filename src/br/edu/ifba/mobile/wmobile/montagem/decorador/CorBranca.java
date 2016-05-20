@@ -18,4 +18,9 @@ public class CorBranca implements ICarro{
 		return carro.getPreco();
 	}
 
+	@Override
+	public String getNome() {
+		return "Branca";
+	}
+
 }

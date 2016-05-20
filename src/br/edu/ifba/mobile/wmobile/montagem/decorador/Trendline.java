@@ -18,4 +18,9 @@ public class Trendline implements ICarro{
 		return carro.getPreco() + 2000;
 	}
 
+	@Override
+	public String getNome() {
+		return "Trendline";
+	}
+
 }

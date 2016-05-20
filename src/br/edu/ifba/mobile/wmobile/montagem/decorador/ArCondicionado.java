@@ -17,5 +17,10 @@ public class ArCondicionado implements ICarro{
 	public double getPreco() {
 		return carro.getPreco() + 2840;
 	}
+
+	@Override
+	public String getNome() {
+		return "Ar-condicionado";
+	}
 	
 }

@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile">
+
+<f:view renderKitId="PRIMEFACES_MOBILE" />
+
+<h:head>
+	<script name="jquery/jquery.js" 
+		library="primefaces"></script>
+</h:head>
+
+<h:body>
+
+	<pm:page id="escolhaPintura">
+
+		<pm:header title="Pintura" />
+		<pm:content>
+			<h:form id="frmPintura">
+
+				<p:dataList id="dlPinturas" 
+					value="#{monte.tiposPinturas}" var="tipo">
+					<p:commandLink value="#{tipo}" 
+						action="cor.ifba">
+						<f:setPropertyActionListener 
+							target="#{monte.pinturaEscolhida}"
+							value="#{tipo}">
+						</f:setPropertyActionListener>
+					</p:commandLink>
+				</p:dataList>
+				
+			</h:form>
+
+		</pm:content>
+
+	</pm:page>
+
+</h:body>
+
+</html>

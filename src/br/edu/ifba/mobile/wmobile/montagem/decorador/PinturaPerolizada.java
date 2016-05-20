@@ -17,5 +17,10 @@ public class PinturaPerolizada implements ICarro{
 	public double getPreco() {
 		return carro.getPreco() + 1988;
 	}
+
+	@Override
+	public String getNome() {
+		return "Perolizada";
+	}
 	
 }

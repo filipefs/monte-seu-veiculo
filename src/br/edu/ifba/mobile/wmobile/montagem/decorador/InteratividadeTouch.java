@@ -16,10 +16,7 @@ public class InteratividadeTouch implements ICarro{
 	public double getPreco() {
 		return anterior.getPreco() + 1780;
 	}
-	@Override
-	public String getNome() {
-		return "Interatividade Touch";
-	}
+	
 	@Override
 	public ICarro removerDecorador() {
 		return anterior;

@@ -19,11 +19,6 @@ public class CorBranca implements ICarro{
 	}
 
 	@Override
-	public String getNome() {
-		return "Branca";
-	}
-
-	@Override
 	public ICarro removerDecorador() {
 		return anterior;
 	}

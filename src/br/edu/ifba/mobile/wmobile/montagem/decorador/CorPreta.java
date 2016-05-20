@@ -19,11 +19,6 @@ public class CorPreta implements ICarro{
 	}
 
 	@Override
-	public String getNome() {
-		return "Preta";
-	}
-
-	@Override
 	public ICarro removerDecorador() {
 		return anterior;
 	}

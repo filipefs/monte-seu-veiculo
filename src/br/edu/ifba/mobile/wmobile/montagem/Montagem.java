@@ -57,6 +57,18 @@ public class Montagem {
 		}
 	}
 	
+	public String getImagem(){
+		if(modelo.getDescricao().contains("Novo Gol")){
+			return "/imgs/novogol.png";
+		}else if(modelo.getDescricao().contains("SpaceFox")){
+			return "/imgs/spacefox.png";
+		}else if(modelo.getDescricao().contains("Jetta")){
+			return "/imgs/jetta.png";
+		}else{
+			return "";
+		}
+	}
+	
 	public List<String> getTipoModelos(){
 		List<String> listaModelos = new ArrayList<String>();
 		listaModelos.add("Novo Gol");
@@ -133,6 +145,7 @@ public class Montagem {
 		}
 		if(escolha.equals("Highline")){
 			modelo = new Highline(modelo);
+
 		}
 	}
 	
@@ -145,11 +158,12 @@ public class Montagem {
 		}
 		if(escolha.equals("Sólida")){
 			modelo = new PinturaSolida(modelo);
+
 		}
 	}
 	
 	public void setOpcionaisEscolhidos(String escolha){
-		if(escolha.equals("Interatividade Touch")){
+		if(escolha.equals("Interatividade touch")){
 			modelo = new InteratividadeTouch(modelo);
 		}
 		if(escolha.equals("Ar-condicionado")){
@@ -157,6 +171,7 @@ public class Montagem {
 		}
 		if(escolha.equals("Acabamento em couro")){
 			modelo = new InteriorCouro(modelo);
+
 		}
 	}
 	
@@ -169,6 +184,7 @@ public class Montagem {
 		}
 		if(escolha.equals("Vermelha")){
 			modelo = new CorVermelha(modelo);
+
 		}
 	}
 		

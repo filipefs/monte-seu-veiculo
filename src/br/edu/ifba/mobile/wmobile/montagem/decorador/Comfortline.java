@@ -19,11 +19,6 @@ public class Comfortline implements ICarro{
 	}
 
 	@Override
-	public String getNome() {	
-		return "Comfortline";
-	}
-
-	@Override
 	public ICarro removerDecorador() {
 		return anterior;
 	}

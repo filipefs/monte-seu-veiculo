@@ -19,11 +19,6 @@ public class CorVermelha implements ICarro{
 	}
 
 	@Override
-	public String getNome() {
-		return "Vermelha";
-	}
-
-	@Override
 	public ICarro removerDecorador() {
 		return anterior;
 	}

@@ -17,12 +17,7 @@ public class Trendline implements ICarro{
 	public double getPreco() {
 		return anterior.getPreco() + 2000;
 	}
-
-	@Override
-	public String getNome() {
-		return "Trendline";
-	}
-
+	
 	@Override
 	public ICarro removerDecorador() {
 		return anterior;

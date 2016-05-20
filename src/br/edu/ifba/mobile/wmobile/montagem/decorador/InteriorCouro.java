@@ -7,20 +7,15 @@ public class InteriorCouro implements ICarro {
 	public InteriorCouro(ICarro anterior) {
 		this.anterior = anterior;
 	}
-	
-	@Override
-	public String getNome() {
-		return "Interior em couro";
-	}
 
 	@Override
 	public String getDescricao() {
-		return " e acabamento interior em couro sintético.";
+		return this.anterior.getDescricao() + " e acabamento interior em couro sintético.";
 	}
 
 	@Override
 	public double getPreco() {
-		return 1000;
+		return this.anterior.getPreco() + 1000;
 	}
 
 	@Override

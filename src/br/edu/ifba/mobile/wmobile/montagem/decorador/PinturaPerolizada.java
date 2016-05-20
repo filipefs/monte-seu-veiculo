@@ -19,11 +19,6 @@ public class PinturaPerolizada implements ICarro{
 	}
 
 	@Override
-	public String getNome() {
-		return "Perolizada";
-	}
-
-	@Override
 	public ICarro removerDecorador() {
 		return anterior;
 	}

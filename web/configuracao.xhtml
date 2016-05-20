@@ -18,13 +18,14 @@
 
 		<pm:content>
 			<h:form id="frmConfiguracao">
-				<h:outputText id="descricaoMontagem" 
-					value="Descrição: #{monte.configuracao.getDescricao()}" />
-					<p />
-				<h:outputText id="precoMontagem"
-					value="Preço: R$#{monte.configuracao.getPreco()} " />
-				<p:commandButton value="Sair" 
-					action="modelo.ifba" />
+					<div align="center">
+					<p:graphicImage value="#{monte.imagem}" width="450" height="256"/>
+					<p/>
+					<h:outputText value="Descrição: #{monte.configuracao.getDescricao()}" style="font-weight:bold;" />
+					<p/>
+					<h:outputText value="Preço: R$ #{monte.configuracao.getPreco()}" style="font-weight:bold;" />
+					</div>
+				<p:commandButton value="Sair" action="modelo.ifba" />
 			</h:form>
 		</pm:content>
 

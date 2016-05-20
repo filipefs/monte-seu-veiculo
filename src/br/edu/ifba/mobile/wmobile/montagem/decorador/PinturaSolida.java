@@ -19,11 +19,6 @@ public class PinturaSolida implements ICarro{
 	}
 
 	@Override
-	public String getNome() {
-		return "Sólida";
-	}
-
-	@Override
 	public ICarro removerDecorador() {
 		return anterior;
 	}

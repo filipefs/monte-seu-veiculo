@@ -19,11 +19,6 @@ public class PinturaMetalica implements ICarro{
 	}
 
 	@Override
-	public String getNome() {
-		return "Metálica";
-	}
-
-	@Override
 	public ICarro removerDecorador() {
 		return anterior;
 	}

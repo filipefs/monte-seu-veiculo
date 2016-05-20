@@ -19,11 +19,6 @@ public class ArCondicionado implements ICarro{
 	}
 
 	@Override
-	public String getNome() {
-		return "Ar-condicionado";
-	}
-
-	@Override
 	public ICarro removerDecorador() {
 		return anterior;
 	}

@@ -19,11 +19,6 @@ public class Highline implements ICarro{
 	}
 
 	@Override
-	public String getNome() {
-		return "Highline";
-	}
-
-	@Override
 	public ICarro removerDecorador() {
 		return anterior;
 	}

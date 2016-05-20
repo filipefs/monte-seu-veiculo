@@ -9,8 +9,7 @@
 <f:view renderKitId="PRIMEFACES_MOBILE" />
 
 <h:head>
-	<script name="jquery/jquery.js" 
-		library="primefaces"></script>
+	<script name="jquery/jquery.js" library="primefaces"></script>
 </h:head>
 
 <h:body>
@@ -21,20 +20,21 @@
 		<pm:content>
 			<h:form id="frmVersao">
 
-				<p:dataList id="dlVersoes" 
-					value="#{monte.tiposVersoes}" var="tipo">
-					<p:commandLink value="#{tipo}" 
-						action="pintura.ifba">
-						<f:setPropertyActionListener 
-							target="#{monte.versaoEscolhida}"
+				<p:dataList id="dlVersoes" value="#{monte.tiposVersoes}" var="tipo">
+					<p:commandLink value="#{tipo}" action="pintura.ifba">
+						<f:setPropertyActionListener target="#{monte.versaoEscolhida}"
 							value="#{tipo}">
 						</f:setPropertyActionListener>
 					</p:commandLink>
+
 				</p:dataList>
+				<p/>
+				<p/>
+					<p:commandButton value="Voltar"
+						action="#{monte.removerDecorador('versao')}">
+					</p:commandButton>
 				
-				<p:commandButton value="Voltar" action="#{monte.removerDecorador('versao')}" >
-				</p:commandButton>
-				
+
 			</h:form>
 
 		</pm:content>

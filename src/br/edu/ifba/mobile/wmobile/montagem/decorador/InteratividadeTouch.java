@@ -2,23 +2,27 @@ package br.edu.ifba.mobile.wmobile.montagem.decorador;
 
 public class InteratividadeTouch implements ICarro{
 
-	private ICarro carro; 
+	private ICarro anterior; 
 	
-	public InteratividadeTouch(ICarro carro) {
-		this.carro = carro;
+	public InteratividadeTouch(ICarro anterior) {
+		this.anterior = anterior;
 	}
 	@Override
 	public String getDescricao() {
-		return this.carro.getDescricao() + " e Interatividade 'Touch'";
+		return this.anterior.getDescricao() + " e interatividade 'touch'";
 	}
 
 	@Override
 	public double getPreco() {
-		return carro.getPreco() + 1780;
+		return anterior.getPreco() + 1780;
 	}
 	@Override
 	public String getNome() {
 		return "Interatividade Touch";
+	}
+	@Override
+	public ICarro removerDecorador() {
+		return anterior;
 	}
 	
 }

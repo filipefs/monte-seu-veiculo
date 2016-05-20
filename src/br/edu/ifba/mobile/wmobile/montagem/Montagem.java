@@ -14,10 +14,13 @@ import br.edu.ifba.mobile.wmobile.montagem.decorador.CorVermelha;
 import br.edu.ifba.mobile.wmobile.montagem.decorador.Highline;
 import br.edu.ifba.mobile.wmobile.montagem.decorador.ICarro;
 import br.edu.ifba.mobile.wmobile.montagem.decorador.InteratividadeTouch;
-import br.edu.ifba.mobile.wmobile.montagem.decorador.ModeloBasico;
+import br.edu.ifba.mobile.wmobile.montagem.decorador.InteriorCouro;
+import br.edu.ifba.mobile.wmobile.montagem.decorador.Jetta;
+import br.edu.ifba.mobile.wmobile.montagem.decorador.NovoGol;
 import br.edu.ifba.mobile.wmobile.montagem.decorador.PinturaMetalica;
 import br.edu.ifba.mobile.wmobile.montagem.decorador.PinturaPerolizada;
 import br.edu.ifba.mobile.wmobile.montagem.decorador.PinturaSolida;
+import br.edu.ifba.mobile.wmobile.montagem.decorador.SpaceFox;
 import br.edu.ifba.mobile.wmobile.montagem.decorador.Trendline;
 
 @ManagedBean(name="monte")
@@ -26,7 +29,7 @@ public class Montagem {
 	
 	private String email = "";
 	private ICarro modelo;
-		
+	
 	public String getEmail() {
 		return email;
 	}
@@ -35,16 +38,37 @@ public class Montagem {
 		this.email = email;
 	}
 	
+	public String removerDecorador(String pagina){
+		modelo = modelo.removerDecorador();
+		return mudarPagina(pagina);
+	}
+	
+	private String mudarPagina(String pageId){
+		if(pageId.equals("versao")){
+			return "modelo.ifba";
+		}else if(pageId.equals("pintura")){
+			return "versao.ifba";
+		}else if(pageId.equals("cor")){
+			return "pintura.ifba";
+		}else if(pageId.equals("opcionais")){
+			return "cor.ifba";
+		}else{
+			return "home.ifba";
+		}
+	}
+	
 	public List<String> getTipoModelos(){
 		List<String> listaModelos = new ArrayList<String>();
 		listaModelos.add("Novo Gol");
+		listaModelos.add("SpaceFox");
+		listaModelos.add("Jetta");
 		
 		return listaModelos;
 	}
 	 
 	public List<ICarro> getTiposModelos(){
 		List<ICarro> listaModelos = new ArrayList<ICarro>();
-		ICarro gol = new ModeloBasico();
+		ICarro gol = new NovoGol();
 		listaModelos.add(gol);
 		
 		listaModelos.get(0).getPreco();
@@ -72,8 +96,9 @@ public class Montagem {
 	
 	public List<String> getOpcionais(){
 		List<String> listaOpcionais = new ArrayList<String>();
-		listaOpcionais.add("Interatividade Touch");
+		listaOpcionais.add("Interatividade touch");
 		listaOpcionais.add("Ar-condicionado");
+		listaOpcionais.add("Acabamento em couro");
 		
 		return listaOpcionais;		
 	}
@@ -89,7 +114,13 @@ public class Montagem {
 	
 	public void setModeloEscolhido(String escolha){
 		if(escolha.equals("Novo Gol")){
-			modelo = new ModeloBasico();
+			modelo = new NovoGol();
+		}
+		if(escolha.equals("SpaceFox")){
+			modelo = new SpaceFox();
+		}
+		if(escolha.equals("Jetta")){
+			modelo = new Jetta();
 		}
 	}
 
@@ -124,6 +155,9 @@ public class Montagem {
 		if(escolha.equals("Ar-condicionado")){
 			modelo = new ArCondicionado(modelo);
 		}
+		if(escolha.equals("Acabamento em couro")){
+			modelo = new InteriorCouro(modelo);
+		}
 	}
 	
 	public void setCorEscolhida(String escolha){
@@ -137,7 +171,7 @@ public class Montagem {
 			modelo = new CorVermelha(modelo);
 		}
 	}
-	
+		
 	public ICarro getConfiguracao(){
 		return modelo;
 	}

@@ -14,18 +14,14 @@
 
 <h:body>
 
-	<pm:page id="configuracao">
+	<pm:page id="paginaInicial">
 
+		<pm:header title="Monte seu Veículo" />
 		<pm:content>
-			<h:form id="frmConfiguracao">
-				<h:outputText id="descricaoMontagem" 
-					value="Descrição: #{monte.configuracao.getDescricao()}" />
-					<p />
-				<h:outputText id="precoMontagem"
-					value="Preço: R$#{monte.configuracao.getPreco()} " />
-				<p:commandButton value="Sair" 
-					action="modelo.ifba" />
-			</h:form>
+			<div align="center">
+				<p:graphicImage value="/imgs/logo2.png" width="256" height="256" />
+				<p:commandButton value="Entrar" action="dados.ifba" />
+			</div>
 		</pm:content>
 
 	</pm:page>

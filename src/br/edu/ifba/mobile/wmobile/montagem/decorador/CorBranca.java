@@ -2,25 +2,30 @@ package br.edu.ifba.mobile.wmobile.montagem.decorador;
 
 public class CorBranca implements ICarro{
 
-	private ICarro carro; 
+	private ICarro anterior; 
 	
-	public CorBranca(ICarro carro) {
-		this.carro = carro;
+	public CorBranca(ICarro anterior) {
+		this.anterior = anterior;
 	}
 	
 	@Override
 	public String getDescricao() {
-		return this.carro.getDescricao() + " branca ";
+		return this.anterior.getDescricao() + " branca ";
 	}
 
 	@Override
 	public double getPreco() {
-		return carro.getPreco();
+		return anterior.getPreco();
 	}
 
 	@Override
 	public String getNome() {
 		return "Branca";
+	}
+
+	@Override
+	public ICarro removerDecorador() {
+		return anterior;
 	}
 
 }

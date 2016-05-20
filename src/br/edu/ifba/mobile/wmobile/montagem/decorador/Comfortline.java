@@ -2,26 +2,30 @@ package br.edu.ifba.mobile.wmobile.montagem.decorador;
 
 public class Comfortline implements ICarro{
 
-	private ICarro carro; 
+	private ICarro anterior; 
 	
-	public Comfortline(ICarro carro) {
-		this.carro = carro;
+	public Comfortline(ICarro anterior) {
+		this.anterior = anterior;
 	}
 	
 	@Override
 	public String getDescricao() {
-		return this.carro.getDescricao() + "modelo Comforline";
+		return this.anterior.getDescricao() + "modelo Comforline";
 	}
 
 	@Override
 	public double getPreco() {
-		return carro.getPreco() + 8000;
+		return anterior.getPreco() + 8000;
 	}
 
 	@Override
-	public String getNome() {
-		
+	public String getNome() {	
 		return "Comfortline";
+	}
+
+	@Override
+	public ICarro removerDecorador() {
+		return anterior;
 	}
 
 }

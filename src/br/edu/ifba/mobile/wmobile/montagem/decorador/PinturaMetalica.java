@@ -2,25 +2,30 @@ package br.edu.ifba.mobile.wmobile.montagem.decorador;
 
 public class PinturaMetalica implements ICarro{
 
-	private ICarro carro; 
+	private ICarro anterior; 
 	
-	public PinturaMetalica(ICarro carro) {
-		this.carro = carro;
+	public PinturaMetalica(ICarro anterior) {
+		this.anterior = anterior;
 	}
 
 	@Override
 	public String getDescricao() {
-		return this.carro.getDescricao() + " com pintura metálica";
+		return this.anterior.getDescricao() + " com pintura metálica";
 	}
 
 	@Override
 	public double getPreco() {
-		return carro.getPreco() + 1384;
+		return anterior.getPreco() + 1384;
 	}
 
 	@Override
 	public String getNome() {
 		return "Metálica";
+	}
+
+	@Override
+	public ICarro removerDecorador() {
+		return anterior;
 	}
 	
 }

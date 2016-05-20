@@ -8,5 +8,5 @@ public interface ICarro {
 	
 	public double getPreco();
 	
-	
+	public ICarro removerDecorador();
 }

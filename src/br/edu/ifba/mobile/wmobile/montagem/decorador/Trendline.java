@@ -2,25 +2,30 @@ package br.edu.ifba.mobile.wmobile.montagem.decorador;
 
 public class Trendline implements ICarro{
 
-	private ICarro carro; 
+	private ICarro anterior; 
 	
-	public Trendline(ICarro carro) {
-		this.carro = carro;
+	public Trendline(ICarro anterior) {
+		this.anterior = anterior;
 	}
 	
 	@Override
 	public String getDescricao() {
-		return this.carro.getDescricao() + "Modelo Trendline";
+		return this.anterior.getDescricao() + "modelo Trendline";
 	}
 
 	@Override
 	public double getPreco() {
-		return carro.getPreco() + 2000;
+		return anterior.getPreco() + 2000;
 	}
 
 	@Override
 	public String getNome() {
 		return "Trendline";
+	}
+
+	@Override
+	public ICarro removerDecorador() {
+		return anterior;
 	}
 
 }

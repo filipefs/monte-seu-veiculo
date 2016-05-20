@@ -2,25 +2,30 @@ package br.edu.ifba.mobile.wmobile.montagem.decorador;
 
 public class PinturaPerolizada implements ICarro{
 
-	private ICarro carro; 
+	private ICarro anterior; 
 	
-	public PinturaPerolizada(ICarro carro) {
-		this.carro = carro;
+	public PinturaPerolizada(ICarro anterior) {
+		this.anterior = anterior;
 	}
 
 	@Override
 	public String getDescricao() {
-		return this.carro.getDescricao() + " com pintura perolizada";
+		return this.anterior.getDescricao() + " com pintura perolizada";
 	}
 
 	@Override
 	public double getPreco() {
-		return carro.getPreco() + 1988;
+		return anterior.getPreco() + 1988;
 	}
 
 	@Override
 	public String getNome() {
 		return "Perolizada";
+	}
+
+	@Override
+	public ICarro removerDecorador() {
+		return anterior;
 	}
 	
 }

@@ -2,25 +2,30 @@ package br.edu.ifba.mobile.wmobile.montagem.decorador;
 
 public class PinturaSolida implements ICarro{
 
-	private ICarro carro; 
+	private ICarro anterior; 
 	
-	public PinturaSolida(ICarro carro) {
-		this.carro = carro;
+	public PinturaSolida(ICarro anterior) {
+		this.anterior = anterior;
 	}
 
 	@Override
 	public String getDescricao() {
-		return this.carro.getDescricao() + " com pintura sólida";
+		return this.anterior.getDescricao() + " com pintura sólida";
 	}
 
 	@Override
 	public double getPreco() {
-		return carro.getPreco();
+		return anterior.getPreco();
 	}
 
 	@Override
 	public String getNome() {
 		return "Sólida";
+	}
+
+	@Override
+	public ICarro removerDecorador() {
+		return anterior;
 	}
 	
 }

@@ -2,25 +2,30 @@ package br.edu.ifba.mobile.wmobile.montagem.decorador;
 
 public class ArCondicionado implements ICarro{
 
-	private ICarro carro; 
+	private ICarro anterior; 
 
-	public ArCondicionado(ICarro carro) {
-		this.carro = carro;
+	public ArCondicionado(ICarro anterior) {
+		this.anterior = anterior;
 	}
 
 	@Override
 	public String getDescricao() {
-		return this.carro.getDescricao() + " e Ar-condicionado";
+		return anterior.getDescricao() + " e ar-condicionado";
 	}
 
 	@Override
 	public double getPreco() {
-		return carro.getPreco() + 2840;
+		return anterior.getPreco() + 2840;
 	}
 
 	@Override
 	public String getNome() {
 		return "Ar-condicionado";
+	}
+
+	@Override
+	public ICarro removerDecorador() {
+		return anterior;
 	}
 	
 }
